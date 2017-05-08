@@ -18,9 +18,9 @@
 	var_dump($conn);
 
 	if ($conn -> connect_errno != 0) {
-	echo 'Lo sentimos. Contrase�a incorrecta';
+	echo 'Lo sentimos. Contraseña incorrecta';
 	} else {
-	echo 'Contrase�a correcta';
+	echo 'Contraseña correcta';
 	}
         
         
