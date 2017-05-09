@@ -1,6 +1,6 @@
 <?php
 
-	echo "foobar";
+	
 
 	//echo "var_dump($_POST) contiene todos los campos";
 	var_dump($_POST);
