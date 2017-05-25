@@ -1,0 +1,263 @@
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+* {
+    padding: 0;
+    margin: 0;
+    //width:800px;
+}
+
+@font-face {
+    font-family: arial;
+
+}
+
+body {
+    background-color: #e7e5e5;
+    margin: 0 auto;
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 225px;
+    width: 1100px;
+    box-sizing: border-box;
+    background-color: #ffffcc;
+
+}
+
+.container {
+    background-color:cornsilk;
+    width: 700px;
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 10px grey;
+    margin: 0 auto;
+    position: rabsolute;
+}
+
+
+#myForm {
+    margin-left: 100px;
+    height: 75%;
+    width: 300px;
+}
+
+a.nounderline:link   
+{   
+    text-decoration:none;   
+}   
+
+h2{
+    font-family: Calibri;
+    font-size: 40px;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    border: 0px solid grey;
+    border-radius: 1px;
+    box-shadow: 10px 10px 10px silver;
+    width: 900px;
+    height: 40px;
+    margin: 5px auto;
+    color: ghostwhite;
+    background-color:#ffffcc;
+}
+
+h4{
+    font-family: Calibri;
+    font-size: 30px;
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    background-color:#99ccff;
+    box-shadow: 10px 10px 10px silver;
+
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+    
+} 
+
+
+.botones_formulario {
+    position: relative;
+    left: 590px;
+    bottom: 90px;
+
+}
+
+.botones_mostrar {
+    width: 185px;
+    position: relative;
+    left: 590px;
+    bottom: 450px;
+}
+
+.botones_mostrar input {
+    cursor: pointer; 
+    width: 180px; 
+    color: white; 
+    background-color: #6699ff; 
+    margin-top: 12px; 
+    height: 25px; 
+    text-align: center; 
+    box-shadow: 10px 5px 5px silver;
+
+}
+
+
+.botones_editar {
+    position: relative;
+    left: 590px;
+    bottom: 540px;
+}
+
+.botones_editar input {
+    cursor: pointer; 
+    width: 180px; 
+    color: white; 
+    background-color: #6699ff; 
+    margin-top: 12px; 
+    height: 25px; 
+    text-align: center; 
+    box-shadow: 10px 5px 5px silver;
+
+}
+
+
+.botones_visualizar {
+    width: 185px;
+    position: relative;
+    left: 590px;
+    bottom: 475px;
+
+}
+
+
+.botones_visualizar input {
+    cursor: pointer; 
+    width: 180px; 
+    color: white; 
+    background-color: #6699ff; 
+    margin-top: 12px; 
+    height: 25px; 
+    text-align: center; 
+    box-shadow: 10px 5px 5px silver;
+
+}
+
+thead {
+    background-color: #333333 ; color: white; font-size:16px; text-align:center;
+}
+
+.botones_tabla {
+    width: 180px; 
+    height: 25px; 
+    font-size: 12px; 
+    margin:20px 10px; 
+    text-align: center;
+    margin-left: 780px; 
+    background-color: #6699ff; 
+    color: white; 
+    box-shadow: 10px 5px 5px silver;
+
+}
+
+.botones {
+    position: relative;
+    left: 590px;
+    bottom: 405px;
+
+}
+
+img {
+    width: 50%;
+}
+
+.content {
+
+    background-color: #ffffcc;
+    width: 50%;
+    height: 248px;
+    margin: 0 auto;
+    border: 15px solid #ffffcc;
+    //border-radius: 8px;
+    //border-style: inset;
+    box-shadow: 10px 10px 10px silver;
+}
+
+
+.marquee {
+    width: 483px; 
+    padding-top:15px ; 
+    padding-bottom:15px ; 
+    vertical-align: central;
+    text-align: center; 
+    margin:10px 10px; 
+    background-color:#00ff99 ; 
+    box-shadow: 10px 5px 5px silver;
+    border-radius: 7px; margin: 0 auto;
+}
+
+.botonera {
+    margin-left: 140px;
+}
+
+#botonera {
+    margin-left: 285px;
+}
+
+
+.buttons {
+    width: 180px; 
+    height: 30px;
+    margin:10px 31px; 
+    color: white;
+    font-weight: bold;
+    background-color:#6699ff;
+    //font-stretch: condensed;
+    //background-color: #99ffcc; 
+    box-shadow: 10px 5px 5px silver;
+    //border: 5px solid grey;
+    //border-style: outset; 
+}
+
+
+.mostrar-foto-alumno {
+    position: relative;
+    bottom: 350px;
+    left: 450px;
+    width: 400px;
+    height: 400px;
+}
+
+.editar-foto-alumno {
+    position: relative;
+    bottom: 440px;
+    left: 450px;
+    width: 400px;
+    height: 400px;
+}
+
+.paginacion {
+    text-align: center;
+}
+
+
+#identificador {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    main {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    img {
+        float: none;
+        width: 100%;
+    }
+}
