@@ -66,13 +66,13 @@
         
         //Ordenamiento por defecto
         $colunmaOrden = isset ($_GET['columna_orden']) ? $_GET['columna_orden'] : "nombre";
-        $orden = isset ($_GET['orden']) ? $_GET['orden'] : "ASC";
+        $ordenLista = isset ($_GET['orden']) ? $_GET['orden'] : "ASC";
         //y lo incluimos en el ORDER BY de la sentencia SQL
         
         
         
         $sql = " SELECT * FROM alumno 
-                 ORDER BY " . $colunmaOrden . ' ' . $orden . "  
+                 ORDER BY " . $colunmaOrden . ' ' . $ordenLista . "  
                  LIMIT " . $filasPorPagina . " OFFSET " . $offset ;
 
         try {
@@ -107,22 +107,34 @@
         <thead>
         <!--creamos los enlaces para la las cabeceras-->
         <tr>
-           <?php foreach ($primeraFila as $clave => $valorColumna) { ?>
+           <?php foreach ($primeraFila as $nombreColumna => $datoPrimeraFila) { ?>
             
-            <!-- generamos la cadena con los parametros -->
-            <?php $parametrosUrl = 'columna_orden=' . $clave . '&' . 'orden=asc'; ?>
+            <!-- generamos la cadena con los parametros URL-->
+            <?php 
+                if ($nombreColumna == $colunmaOrden) {
+                    $ordenEnlace = $ordenLista == 'ASC' ? 'DESC' : 'ASC';
+                } else {
+                    $ordenEnlace = 'ASC';
+                }
+                $parametrosUrl = 'columna_orden=' . $nombreColumna . '&' . 'orden=' . $ordenEnlace;
+                //var_dump('parametros = ' .$parametrosUrl);
+                //var_dump('nombrecolumna = ' .$nombreColumna);
+            ?>
+                       
             <th>
                 <!-- generamos la url -->
-                <a href="tabla_alumno.php=?<?php echo $parametrosUrl ?>">
+                <a href="tabla_alumno.php?<?php echo $parametrosUrl ?>">
                     
                     <!-- generamos elnombre del enlace -->
+                    <?php
                     if ($nombreColumna == 'curso_id') {
-                        echo '<td style="background-color: #333333 ; color: white; font-size:16px; text-align:center;">curso</td>';
+                                   echo'curso';
                         } else if ($nombreColumna == 'fecha_nacimiento') {
-                          echo '<td style="background-color: #333333 ; color: white; font-size:16px; text-align:center;">fecha nacimiento</td>';
+                                  echo'fecha nacimiento';
                         } else {
-                        echo '<td style="background-color: #333333 ; color: white; font-size:16px; text-align:center;">' . $nombreColumna . '</td>';
-                    }
+                                   echo " $nombreColumna " ; 
+                    };
+                    ?>
                 </a>
             </th>
            <?php } ?>
@@ -197,35 +209,41 @@
 
         echo '</table>';
         
-       
-        echo '<a href="formulario_alumno.php"  class="nounderline">';
-        echo '<input  class="botones_tabla"  type="submit" value="Introducir nuevo alumno"></a>';
-        
+        ?>
+        <a href="formulario_alumno.php"  class="nounderline">
+        <input  class="botones_tabla"  type="submit" value="Introducir nuevo alumno"></a>
+        <?php
         //Paginacion
-        $columnaOrden = $_GET['columna_orden'];
-        $orden = $_GET['orden'];
-        
-        var_dump($columnaOrden);
-        var_dump($orden);
-        
-        
-        echo'<div class="paginacion">';
-            echo '<a href="tabla_alumno.php=?pagina=1"> << &nbsp</a>';
-            echo '<a href="tabla_alumno.php=?pagina=1">&nbsp < &nbsp</a>';
+
+/*        
+        var_dump('columna_orden = '.$columnaOrden);
+        var_dump('orden_lista = '.$ordenLista);
+        var_dump('total_paginas = '.$totalPaginas);
+ 
+ */
+        ?>
+        <div class="paginacion">
             
-            for ($i=1; $i<= $totalPaginas; $i++) {
-                echo '<a href="tabla_alumno.php=?pagina=' . $totalPaginas . '">&nbsp' . $i . '&nbsp</a>';
-            }
             
-            echo '<a href="tabla_alumno.php=?pagina=1">&nbsp > &nbsp</a>';
-            echo '<a href="tabla_alumno.php=?pagina=1">&nbsp >> &nbsp</a>';
+            <?php 
+            $parametrosUrlEnlacePagina  = 'columna_orden=' . $nombreColumna . '&' . 'orden=' . $ordenEnlace; ?>
             
-            echo '</div>';
-            echo '<br>';
-        echo '</div>';
+            <a href="tabla_alumno.php?<?php echo $parametrosUrlEnlacePagina ?>&pagina=1"> << &nbsp</a>
+            <a href="tabla_alumno.php?<?php echo $parametrosUrlEnlacePagina ?>&pagina=<?php echo $numeroPaginaActual-1 ?>">&nbsp < &nbsp</a>
+            
+            <?php for ($i=1; $i<= $totalPaginas; $i++) { ?>
+                <a href="tabla_alumno.php?<?php echo $parametrosUrlEnlacePagina ?>&pagina=<?php echo $i ?>">&nbsp<?php echo $i ?>&nbsp</a>
+            <?php } ?>
+            
+            <a href="tabla_alumno.php?<?php echo $parametrosUrlEnlacePagina ?>&pagina=<?php echo $numeroPaginaActual+1 ?>">&nbsp > &nbsp</a>
+            <a href="tabla_alumno.php?<?php echo $parametrosUrlEnlacePagina ?>&pagina=<?php echo $totalPaginas ?>">&nbsp >> &nbsp</a>
+            
+            </div>
+        <br>
+        </div>
 
        
-        ?>
+        
 
         
         <script>

@@ -50,7 +50,7 @@
                     <input class="buttons" type="submit" value="Formulario" title="Añadir nuevos alumnos">
                 </a>
                 <a href="tabla_alumno.php"  class="nounderline" >
-                    <input class="buttons" type="submit" value="Lista de alumnos" title="Ver lista de alumnos"  style="color:black>
+                    <input class="buttons" type="submit" value="Lista de alumnos" title="Ver lista de alumnos"  style="color:black">
                 </a>
 
             </div>
