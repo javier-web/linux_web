@@ -1,0 +1,153 @@
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+* {
+    padding: 0;
+    margin: 0;
+    //width:800px;
+}
+
+@font-face {
+    font-family: arial;
+
+}
+
+body {
+    background-color: #e7e5e5;
+    margin: 0 auto;
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 225px;
+    width: 1100px;
+    box-sizing: border-box;
+    background-color: #ffffcc;
+
+}
+
+.container {
+    //background-color:cornsilk;
+    background-color:#ffffcc;
+    width: 700px;
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 10px grey;
+    margin: 0 auto;
+    position: rabsolute;
+}
+
+
+#myForm {
+    margin-left: 100px;
+    height: 100%;
+    width: 300px;
+}
+
+a.nounderline:link   
+{   
+    text-decoration:none;   
+}   
+
+h2{
+    font-family: Calibri;
+    font-size: 40px;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    border: 0px solid grey;
+    border-radius: 1px;
+    box-shadow: 10px 10px 10px silver;
+    width: 900px;
+    height: 40px;
+    margin: 5px auto;
+    color: ghostwhite;
+    background-color:#ffffcc;
+}
+
+h4{
+    font-family: Calibri;
+    font-size: 30px;
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    background-color:#99ccff;
+    box-shadow: 10px 10px 10px silver;
+
+}
+
+
+.botones {
+    position: relative;
+    left: 554px;
+    bottom: 175px;
+
+}
+
+
+
+
+img {
+    width: 50%;
+    //border: 15px solid white;
+    //box-shadow: 10px 10px 10px silver;
+}
+
+.content {
+
+    background-color: #ffffcc;
+    width: 50%;
+    height: 248px;
+    margin: 0 auto;
+    border: 15px solid #ffffcc;
+    //border-radius: 8px;
+    //border-style: inset;
+    box-shadow: 10px 10px 10px silver;
+}
+
+
+#identificador {
+    display: none;
+}
+
+#loader {
+    display: none;
+    position: relative;
+    bottom: 35px;
+    left: 190px;
+    width: 20%;
+    
+}
+
+.textos {
+    position: relative;
+    bottom: 188px;
+    left: 265px;
+}
+
+.span {
+    color: red;
+}
+.loader {
+    display: none;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    position: relative;
+    bottom: 520px;
+    left: 0px;
+    
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+  
+}
+
